@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ML Server Cooling — Capstone 92</title>
+<meta name="description" content="Capstone 92 : Machine Learning pour optimiser le refroidissement des serveurs en data center.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo"><span class="logo-badge mono">92</span> ML Server Cooling</a>
+      <div class="links">
+        <a href="#probleme">Problème</a>
+        <a href="#approche">Approche</a>
+        <a href="#resultats">Résultats</a>
+        <a href="#planning">Planning</a>
+        <a href="#equipe">Équipe</a>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="Changer de thème">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <span class="tag"><span class="dot"></span> Capstone #92 · 2026</span>
+      <h1>Refroidir les serveurs <span class="grad">plus intelligemment</span> grâce au Machine Learning</h1>
+      <p class="lead">
+        Nous utilisons des modèles prédictifs pour anticiper la charge thermique d'un data center
+        et piloter le refroidissement en temps réel — moins d'énergie, sans risque de surchauffe.
+      </p>
+      <div class="cta">
+        <a href="#approche" class="btn primary">Découvrir l'approche →</a>
+        <a href="#resultats" class="btn">Voir les résultats</a>
+      </div>
+    </div>
+
+    <div class="rack-card" aria-label="Simulation de carte thermique d'une salle serveur">
+      <div class="rack-head"><span>Salle serveur — carte thermique</span><span class="mono" id="clock">t = 0s</span></div>
+      <div class="racks" id="racks"></div>
+      <div class="legend"><span>18°C</span><div class="legend-bar"></div><span>35°C</span></div>
+      <div class="toggle">
+        <button id="modeStatic" class="on">Consigne fixe</button>
+        <button id="modeML">Pilotage ML</button>
+      </div>
+      <div class="readout">
+        <div><small>Température moyenne</small><b class="mono" id="avgT">–</b></div>
+        <div><small>Puissance refroidissement</small><b class="mono" id="power">–</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEME -->
+  <section id="probleme">
+    <p class="eyebrow">Le problème</p>
+    <h2>Le refroidissement, un poste énergétique majeur</h2>
+    <p class="section-lead">
+      Dans un data center, une part importante de l'électricité ne sert pas au calcul mais à évacuer la chaleur.
+      Les systèmes classiques fonctionnent avec des consignes fixes et conservatrices : ils sur-refroidissent
+      la plupart du temps pour se protéger des pics.
+    </p>
+    <div class="grid3">
+      <div class="card"><div class="ico">⚡</div><h3>Énergie gaspillée</h3><p>Des consignes statiques, réglées pour le pire cas, consomment bien plus que nécessaire en charge normale.</p></div>
+      <div class="card"><div class="ico">🌡️</div><h3>Points chauds</h3><p>La chaleur n'est pas uniforme : certaines baies surchauffent pendant que d'autres sont trop froides.</p></div>
+      <div class="card"><div class="ico">⏱️</div><h3>Réaction tardive</h3><p>Les régulateurs réagissent après la montée en température au lieu de l'anticiper.</p></div>
+    </div>
+  </section>
+
+  <!-- APPROCHE -->
+  <section id="approche">
+    <p class="eyebrow">Notre approche</p>
+    <h2>Du capteur à la décision</h2>
+    <p class="section-lead">
+      Un pipeline de bout en bout qui apprend la dynamique thermique de la salle et recommande
+      les meilleurs réglages de refroidissement.
+    </p>
+    <div class="pipeline">
+      <div class="step"><h3>Collecte des données</h3><p>Températures, charge CPU, débits d'air, consommation des CRAC/CRAH, météo extérieure.</p></div>
+      <div class="step"><h3>Modèle prédictif</h3><p>Prévision de la température des baies à court terme (gradient boosting, LSTM…).</p></div>
+      <div class="step"><h3>Optimisation</h3><p>Choix des consignes minimisant l'énergie sous contrainte de température (MPC / RL).</p></div>
+      <div class="step"><h3>Validation</h3><p>Tests en simulation puis comparaison avec la stratégie de référence.</p></div>
+    </div>
+  </section>
+
+  <!-- RESULTATS -->
+  <section id="resultats">
+    <p class="eyebrow">Résultats</p>
+    <h2>Indicateurs clés</h2>
+    <p class="section-lead">Les métriques que nous suivons pour évaluer le projet.</p>
+    <div class="kpis">
+      <div class="kpi"><b class="mono">— %</b><span>Économie d'énergie de refroidissement</span></div>
+      <div class="kpi"><b class="mono">— °C</b><span>Erreur de prédiction (MAE)</span></div>
+      <div class="kpi"><b class="mono">—</b><span>PUE avant → après</span></div>
+      <div class="kpi"><b class="mono">0</b><span>Dépassements de seuil thermique</span></div>
+    </div>
+    <p class="note">À compléter avec vos résultats finaux.</p>
+  </section>
+
+  <!-- PLANNING -->
+  <section id="planning">
+    <p class="eyebrow">Planning</p>
+    <h2>Avancement du projet</h2>
+    <div class="timeline">
+      <div class="tl"><span class="when">Phase 1</span><span>Revue de littérature & cadrage</span><span class="status done">Terminé</span></div>
+      <div class="tl"><span class="when">Phase 2</span><span>Collecte et nettoyage des données</span><span class="status done">Terminé</span></div>
+      <div class="tl"><span class="when">Phase 3</span><span>Modélisation prédictive de la température</span><span class="status wip">En cours</span></div>
+      <div class="tl"><span class="when">Phase 4</span><span>Optimisation des consignes de refroidissement</span><span class="status todo">À venir</span></div>
+      <div class="tl"><span class="when">Phase 5</span><span>Évaluation, rapport & soutenance</span><span class="status todo">À venir</span></div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section id="equipe">
+    <p class="eyebrow">Équipe</p>
+    <h2>Qui sommes-nous ?</h2>
+    <div class="team">
+      <div class="member"><div class="avatar">JB</div><b>Jean Bassili</b><br><small>École polytechnique</small></div>
+      <div class="member"><div class="avatar">?</div><b>Membre 2</b><br><small>Rôle</small></div>
+      <div class="member"><div class="avatar">?</div><b>Membre 3</b><br><small>Rôle</small></div>
+      <div class="member"><div class="avatar">?</div><b>Encadrant</b><br><small>Partenaire / tuteur</small></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 · Capstone 92 — ML for Server Cooling</span>
+    <span>École polytechnique</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
